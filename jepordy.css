@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+body{
+background: linear-gradient(#1B3F8B, #8B8989, #380474);
+width: 100%;
+height: 100%;
+
+}
+table {
+position: absolute;
+top:80px;
+left: 8px;
+float: left;
+color:#fff;
+border:1px solid black;
+background-image:url(https://i.imgsafe.org/e6fd822662.jpg);
+width: 45%;
+}
+th,td,tr{
+color:#fff;
+border:1px solid black;
+font-size:1em;
+height:25px;
+width: 95px;
+border-collapse: collapse;
+
+}
+.clinton{
+background: rgba(0, 0, 100, 0.7);
+}
+.trump{
+background: rgba(100, 0, 0, 0.7);
+}
+.johnson{
+background: rgba(100, 100, 0, 0.7);
+}
+.stein{
+background: rgba(0, 100, 0, 0.7);
+}
+.other{
+background: rgba(100, 100, 100, 0.7);
+}
+.button1{
+background: rgba(0, 0, 50, 1.0);
+width: 100%;
+height:80%;
+}
+.button2{
+background: rgba(50, 0, 0, 1.0);
+width: 100%;
+height:80%;
+}
+.button3{
+background: rgba(50, 50, 0, 1.0);
+width: 100%;
+height:80%;
+}
+.button4{
+background: rgba(0, 50, 0, 1.0);
+width: 100%;
+height:80%;
+}
+.button5{
+background: rgba(25, 25, 25 1.0);
+width: 100%;
+height:80%;
+}
+#buttonn{
+	float: left;
+width:150px;
+border-radius: 180px;
+border-color:black;
+font-size:1em;
+color:#000;
+background-color: #757575;
+margin-left: 150px;
+margin-top:100px;
+}
+#side {
+position: absolute;
+top: -30px;
+right: 50px;
+float: right;
+width: 50%;
+font-size: 1.5em;
+color:#000;
+text-align: left;
+}
+#scoreboard{
+position:relative;
+float: left;
+color:#000;
+border:1px solid black;
+background-image:url(https://i.imgsafe.org/6533bc064f.jpg);
+width: 45%;
+font-size:2em;
+}
+#home {
+background-color:#000;
+color:#fff;
+font-size: 2em;
+position:relative;
+float: right;
+}

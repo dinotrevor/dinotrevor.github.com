@@ -15,7 +15,7 @@ padding:1%;
 }
 
 table {
-margin:7%;
+margin:10%;
 position: absolute;
 top:80px;
 left: 8px;
@@ -105,7 +105,7 @@ border:1px solid black;
 background-image:url(https://i.imgsafe.org/6533bc064f.jpg);
 width:50%;
 font-size:2em;
-margin:1%;
+margin:5%;
 }
 
 footer {

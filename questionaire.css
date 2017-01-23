@@ -1,0 +1,144 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+body{
+	background: linear-gradient(#339966, #669933, #993366);
+	margin:7%;
+	border:solid black 2px;
+	font: 14px/20px Arial, San-Serif;
+	line-height:30px;
+	padding:1%;
+}
+#logo {
+	margin: 20px;
+	float: left;
+	width: 200px;
+	height: 60px;
+	background: url(https://cdn0.iconfinder.com/data/icons/typicons-2/24/tree-64.png) no-repeat center;
+}
+#logo2 {
+	margin: -5px;
+	position: absolute;
+	left: 160px;
+	transform: scale(0.80, 0.80);
+	width: 250px;
+	height: 100px;
+	background: url(https://i.imgsafe.org/95b77dea57.jpg);
+	opacity: 0.90;
+}
+.cat{
+	color:#fcfcfc;
+	font-size:1.5em;
+	
+}
+h1{
+	padding:1%;
+	color:#104E8B;
+	font-size:3em;
+	text-align:center;
+}
+
+#instruct {
+	background-color: #000;
+	margin:5%;
+}
+
+#rules {
+	color: #8af;
+	font-size: 2em;
+	margin:5%;
+}
+
+#yin{
+	background-color: #111999;
+}
+#yang{
+	background-color:#999111;
+}
+#correct{
+	background-color: #fff;	
+	font-size: 2em;
+	color:#78AB46;
+}
+#wrong {
+	background-color: #fff;
+	font-size: 2em;
+	color:#CC1100;
+}
+button {
+	height:70px;
+	width:70px;
+	border: solid gold 2px;
+	border-radius: 35px;
+	background: #FCFCFC;
+	
+}
+.button2, .button1, .button0{
+	background-color: silver;
+}
+
+
+.button3 {
+	background-color: silver;
+}
+
+footer {
+	background: #333333;
+	width: 100%;
+	height:50px;
+	overflow: hidden;
+	opacity: 0.90;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+footer p, footer h3 {
+	color: #FFF;
+}
+b{
+	font-size:30px;
+	color: #eef203;
+}
+footer p a {
+	color: #FFF;
+	text-decoration: none;
+}
+a{
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+header {
+	background: rgba(8,0,0,0.1);
+	width: 100%;
+	height: 86px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	opacity:0.90;
+}
+nav {
+	float: right;
+	padding: 35px 20px 20px 0;
+}
+
+ul {
+	list-style: none;
+}
+nav ul li {
+	display: inline-block;
+	float: left;
+	padding: 10px;
+}
+.current {
+	color: #FFF;
+	text-decoration: underline;
+}

@@ -5,8 +5,6 @@ document.getElementById("cat").style.display = "block";
 document.getElementById("scoreboard").style.display = "block";
 document.getElementById("rules").style.display = "none";
 document.getElementById("inside").innerHTML = "Good Luck!";
-document.getElementById("home").style.display = "inline-block";
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////blue col.

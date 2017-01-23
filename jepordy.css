@@ -96,7 +96,9 @@ color:#000;
 text-align: left;
 }
 #scoreboard{
-position: relative;
+position: absolute;
+top:50px;
+left:100px;
 float: left;
 color:#000;
 border:1px solid black;

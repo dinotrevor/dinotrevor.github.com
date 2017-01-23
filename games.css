@@ -9,20 +9,7 @@ body {
 	font: 14px/20px Arial, San-Serif;
 	margin: 0;
 }
-#logo {
-	float: left;
-	width: 100px;
-	height: 100px;
-	background: url(https://cdn0.iconfinder.com/data/icons/typicons-2/24/tree-64.png) no-repeat center;
-}
-#logo2 {
-	margin: -5px;
-	float: left;
-	width: 150px;
-	height: 100px;
-	background: url(https://i.imgsafe.org/95b77dea57.jpg);
-	opacity: 0.90;
-}
+
 p {
 	padding: 1%
 }

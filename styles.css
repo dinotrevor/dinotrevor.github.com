@@ -6,16 +6,20 @@
 }
 body{
 	background: linear-gradient(#339966, #669933, #993366);
-	margin:7%;
-	border:solid black 2px;
-	font: 14px/20px Arial, San-Serif;
-	line-height:30px;
+	font: 14/20px Arial, San-Serif;
+	
 	padding:1%;
 }
 
 .cat{
 	color:#fcfcfc;
-	font-size:1.5em;
+	font-size:2em;
+	width:100%;
+	background-color:darkslategrey;
+	text-align:center;
+	display:block;
+	margin:auto;
+	height:25%;
 	
 }
 h1{
@@ -26,48 +30,87 @@ h1{
 }
 
 #instruct {
-	background-color: #000;
-	margin:5%;
+	background-color: #90ae2a;
+	margin:auto;
+	border:solid white 2px;
+	border-radius:180px;
+	box-shadow:10px 10px 10px 10px black;
+	line-height:30px;
+	width:100%;
+	
 }
 
 #rules {
-	color: #8af;
+	color: #800110;
 	font-size: 2em;
-	margin:5%;
+	margin:auto;
+	text-align:center;
+	text-shadow:2px 2px white;
+	font-family: helvetica arial arial-black sans-serif;
+	list-style-type:none;
+	width:50%;
+	display:block;
 }
 
-#yin{
-	background-color: #111999;
+#title {
+	text-shadow:2px 2px white;
+	font-family: helvetica arial arial-black sans-serif;
+	margin:10px;
 }
-#yang{
-	background-color:#999111;
+
+.dog {
+	background-color:black;
+	color:white;
+	height:80px;
+	font-size:28px;
+	text-align:center;
+	line-height:30px;
 }
 #correct{
-	background-color: #fff;	
-	font-size: 2em;
+	
+	font-size: 4em;
 	color:#78AB46;
+	text-shadow:2px 2px 2px white;
 }
 #wrong {
-	background-color: #fff;
-	font-size: 2em;
+	
+	font-size: 4em;
 	color:#CC1100;
+	text-shadow:2px 2px 2px black;
+}
+#scoring{
+	background: linear-gradient(#000000, darkcyan, maroon);
+	opacity:0.8;
+	width:100%;
+	display:block;
+	margin:auto;
+	text-align:center;
+	height:250px;
+	line-height:100px;
 }
 button {
-	height:70px;
-	width:70px;
-	border: solid gold 2px;
+	height:100px;
+	width:24%;
+	border: solid gold 3px;
 	border-radius: 35px;
-	background: #FCFCFC;
+	background-color:darkcyan;
 	
 }
-.button2, .button1, .button0{
-	background-color: silver;
+#start {
+	margin:auto;
+	width:75%;
+	display:block;
+	background-color:royalblue;
+	color:white;
+	font-weight: bolder;
+	font-size:30px;
+	margin-bottom:20px;
+	margin-top:30px;
+	
+	
 }
 
 
-.button3 {
-	background-color: silver;
-}
 
 footer {
 	background: #333333;

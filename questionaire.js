@@ -1,6 +1,10 @@
+var comments = [];
+comments = ["Sorry, that is wrong", "Try again", "Nope, you are wrong", "Better luck next time"];
+
 //correct answers get a point
 var score = 0;
 var wrong = 0;
+var total;
 if (score >= 5) {
 	document.getElementById("line").style.display = "block";
 }
@@ -15,8 +19,13 @@ document.getElementById("correct").innerHTML = "Correct: " + score;
 //gets rid of instructions at start
 function rid() {
 document.getElementById("instruct").style.display = "none";
+document.getElementById("start").style.display = "none";
 document.getElementById("one").style.display = "block";
 
+}
+function func(score, total = 12) {
+	console.log("You got " + score + " out of " + total);
+	return "You got " + score + " out of " + total;
 }
 
 
@@ -268,27 +277,27 @@ document.getElementById("dog").innerHTML="Yes! you are right!";
 add1();
 }
 function answer2() {
-document.getElementById("dog").innerHTML="Sorry.";
+document.getElementById("dog").innerHTML=comments[0];
 add2 ();
 }
 function answer3() {
-document.getElementById("dog").innerHTML="Wrong!";
+document.getElementById("dog").innerHTML=comments[2];
 add2 ();
 }
 function answer4() {
-document.getElementById("dog").innerHTML="Nope. Try again.";
+document.getElementById("dog").innerHTML=comments[1];
 add2()
 }
 function answer5() {
-document.getElementById("dog2").innerHTML="Nope. Try again.";
+document.getElementById("dog2").innerHTML=comments[0];
 add2()
 }
 function answer6() {
-document.getElementById("dog2").innerHTML="Nope. Try again.";
+document.getElementById("dog2").innerHTML=comments[1];
 add2()
 }
 function answer7() {
-document.getElementById("dog2").innerHTML="Sorry that is wrong.";
+document.getElementById("dog2").innerHTML=comments[0];
 add2()
 }
 function answer8() {
@@ -296,11 +305,11 @@ document.getElementById("dog2").innerHTML="Correct!.";
 add1();
 }
 function answer9() {
-document.getElementById("dog3").innerHTML="Negative.";
+document.getElementById("dog3").innerHTML=comments[2];
 add2()
 }
 function answer10() {
-document.getElementById("dog3").innerHTML="That is false..";
+document.getElementById("dog3").innerHTML=comments[0];
 add2()
 }
 function answer11() {
@@ -308,11 +317,11 @@ document.getElementById("dog3").innerHTML="Good job!";
 add1();
 }
 function answer12() {
-document.getElementById("dog3").innerHTML="That is false..";
+document.getElementById("dog3").innerHTML=comments[2];
 add2()
 }
 function answer13() {
-document.getElementById("dog4").innerHTML="Nope";
+document.getElementById("dog4").innerHTML=comments[0];
 add2()
 }
 function answer14() {
@@ -320,15 +329,15 @@ document.getElementById("dog4").innerHTML="Right!";
 add1();
 }
 function answer15() {
-document.getElementById("dog4").innerHTML="That is false..";
+document.getElementById("dog4").innerHTML=comments[1];
 add2()
 }
 function answer16() {
-document.getElementById("dog4").innerHTML="Sorry that is wrong.";
+document.getElementById("dog4").innerHTML=comments[0];
 add2()
 }
 function answer17() {
-document.getElementById("dog5").innerHTML="Sorry that is wrong.";
+document.getElementById("dog5").innerHTML=comments[3];
 add2()
 }
 function answer18() {
@@ -339,23 +348,23 @@ if (score >= 5) {
 }
 }
 function answer19() {
-document.getElementById("dog5").innerHTML="Try again.";
+document.getElementById("dog5").innerHTML=comments[2];
 add2()
 }
 function answer20() {
-document.getElementById("dog5").innerHTML="Nope not that one.";
+document.getElementById("dog5").innerHTML=comments[2];
 add2()
 }
 function answer21() {
-document.getElementById("dog6").innerHTML="Better luck next time.";
+document.getElementById("dog6").innerHTML=comments[1];
 add2()
 }
 function answer22() {
-document.getElementById("dog6").innerHTML="Nope.";
+document.getElementById("dog6").innerHTML=comments[0];
 add2()
 }
 function answer23() {
-document.getElementById("dog6").innerHTML="Sorry that is wrong.";
+document.getElementById("dog6").innerHTML=comments[0];
 add2()
 }
 function answer24() {
@@ -366,7 +375,7 @@ if (score >= 5) {
 }
 }
 function answer25() {
-document.getElementById("dog7").innerHTML="Not right.";
+document.getElementById("dog7").innerHTML=comments[3];
 add2()
 }
 function answer26() {
@@ -377,11 +386,11 @@ if (score >= 5) {
 }
 }
 function answer27() {
-document.getElementById("dog7").innerHTML="Sorry that is wrong.";
+document.getElementById("dog7").innerHTML=comments[0];
 add2()
 }
 function answer28() {
-document.getElementById("dog7").innerHTML="That is false.";
+document.getElementById("dog7").innerHTML=comments[3];
 add2()
 }
 function answer29() {
@@ -392,19 +401,19 @@ if (score >= 5) {
 }
 }
 function answer30() {
-document.getElementById("dog8").innerHTML="Better luck next time!.";
+document.getElementById("dog8").innerHTML=comments[1];
 add2 ();
 }
 function answer31() {
-document.getElementById("dog8").innerHTML="You gotta try harder!.";
+document.getElementById("dog8").innerHTML=comments[2];
 add2()
 }
 function answer32() {
-document.getElementById("dog8").innerHTML="Sorry that is wrong.";
+document.getElementById("dog8").innerHTML=comments[0];
 add2()
 }
 function answer33() {
-document.getElementById("dog9").innerHTML="No not that one.";
+document.getElementById("dog9").innerHTML=comments[3];
 add2()
 }
 function answer34() {
@@ -415,11 +424,11 @@ if (score >= 5) {
 }
 }
 function answer35() {
-document.getElementById("dog9").innerHTML="Sorry that is wrong.";
+document.getElementById("dog9").innerHTML=comments[2];
 add2()
 }
 function answer36() {
-document.getElementById("dog9").innerHTML="You are wrong.";
+document.getElementById("dog9").innerHTML=comments[0];
 add2()
 }
 function answer37() {
@@ -430,19 +439,19 @@ if (score >= 5) {
 }
 }
 function answer38() {
-document.getElementById("dog10").innerHTML="Sorry, try again.";
+document.getElementById("dog10").innerHTML=comments[1];
 add2()
 }
 function answer39() {
-document.getElementById("dog10").innerHTML="Sorry that is wrong.";
+document.getElementById("dog10").innerHTML=comments[1];
 add2()
 }
 function answer40() {
-document.getElementById("dog10").innerHTML="Wrong answer.";
+document.getElementById("dog10").innerHTML=comments[0];
 add2()
 }
 function answer41() {
-document.getElementById("dog11").innerHTML="No, that is wrong.";
+document.getElementById("dog11").innerHTML=comments[2];
 add2()
 }
 function answer42() {
@@ -453,11 +462,11 @@ if (score >= 5) {
 }
 }
 function answer43() {
-document.getElementById("dog11").innerHTML="Wrong answer.";
+document.getElementById("dog11").innerHTML=comments[3];
 add2()
 }
 function answer44() {
-document.getElementById("dog11").innerHTML="Nope.";
+document.getElementById("dog11").innerHTML=comments[2];
 add2()
 }
 function answer45() {
@@ -468,14 +477,14 @@ if (score >= 5) {
 }
 }
 function answer46() {
-document.getElementById("dog12").innerHTML="Sorry that is wrong.";
+document.getElementById("dog12").innerHTML=comments[0];
 add2()
 }
 function answer47() {
-document.getElementById("dog12").innerHTML="No not that one.";
+document.getElementById("dog12").innerHTML=comments[1];
 add2()
 }
 function answer48() {
-document.getElementById("dog12").innerHTML="Try again.";
+document.getElementById("dog12").innerHTML=comments[2];
 add2()
 }

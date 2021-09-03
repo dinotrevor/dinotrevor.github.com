@@ -1,490 +1,350 @@
-var comments = [];
-comments = ["Sorry, that is wrong", "Try again", "Nope, you are wrong", "Better luck next time"];
+// JavaScript Documentconst start = document.getElementById("start");
+const quiz = document.getElementById("quiz");
+const question = document.getElementById("question");
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
+const choiceD = document.getElementById("D");
+const scoreDiv = document.getElementById("score");
 
-//correct answers get a point
+
+
+		const questions =
+		[
+		{
+		question: "What color are Dorthy's slippers in The Wizard of Oz?",
+		choiceA : "Orange",
+		choiceB : "Ruby",
+		choiceC : "Pink",
+		choiceD : "White",
+		correct: 'B',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What is the name of Spongebob's work?",
+		choiceA : "Oyster Outlet",
+		choiceB : "Rocking Swordfish",
+		choiceC : "Krusty Krab",
+		choiceD : "Fin",
+		correct: 'C',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "How much donuts is in a bakers dozen?",
+		choiceA : "12",
+		choiceB : "11",
+		choiceC : "13",
+		choiceD : "14",
+		correct: 'C',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What planet has the moon Titan?",
+		choiceA : "Neptune",
+		choiceB : "Saturn",
+		choiceC : "Mars",
+		choiceD : "Venus",
+		correct: 'B',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What year did the original Woodstock concert take place?",
+		choiceA : "1949",
+		choiceB : "1959",
+		choiceC : "1969",
+		choiceD : "1979",
+		correct: 'C',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What country has the city Astana?",
+		choiceA :"Dominican Republic",
+		choiceB : "Russia",
+		choiceC : "Khazakstan",
+		choiceD : "Nepal",
+		correct:'C',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What year did NATO form?",
+		choiceA : "1939",
+		choiceB : "1949",
+		choiceC : "1929",
+		choiceD : "1944",
+		correct: 'B',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "What country has more people?",
+		choiceA : "Japan",
+		choiceB : "Indonesia",
+		choiceC : "Russia",
+		choiceD : "Germany",
+		correct: 'B',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "Who was John Glen?",
+		choiceA : "Inventor of Box-Tops",
+		choiceB : "Founder of the City of Glendale",
+		choiceC : "First man the Orbit the Earth",
+		choiceD : "Maker of HTML",
+		correct: 'C',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		},
+		{
+		question: "How far is the moon from earth?",
+		choiceA : "330,050 miles",
+		choiceB : "238,900 miles",
+		choiceC : "212,200 miles",
+		choiceD : "175,700 miles",
+		correct: 'B',
+		incorrectA: 'A',
+		incorrectD: 'D'
+		}
+		];	
+		
+//This function starts the games after the user enters a username to play with, which will be displayed on the screen next to their current score *and the 30 second timer*.	
+		/*function start() {
+			var name = prompt("Please create a username!");
+			document.getElementById("button1").style.display = "none";
+			
+			document.getElementById("displayName").style.display = "block";
+			//document.getElementById("displayTime").style.display = "block"; 
+			document.getElementById("displayScore").style.display = "block";
+			
+			document.getElementById("displayScore").innerHTML = "Score: " + score; 
+			document.getElementById("mainDisplay").style.display = "block";
+			startQuiz();
+			}*/
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
 var score = 0;
-var wrong = 0;
-var total;
-if (score >= 5) {
+
+let q = questions[runningQuestion];
+
+function renderQuestion(){
+    let q = questions[runningQuestion];
+    
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+	choiceD.innerHTML = q.choiceD;
+	
+}
+
+
+//start.addEventListener("click", startQuiz);
+
+
+// start quiz
+function startQuiz(){
+    start.style.display = "none";
+	var name = prompt("Please create a username!");
+	document.getElementById("displayName").innerHTML = name;
+	document.getElementById("displayName").style.display = "block";
+	document.getElementById("displayWelcome").style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+
+	
+}
+
+
+
+// checkAnwer
+
+function checkAnswer(answer){
+    if( answer === questions[runningQuestion].correct){
+		answerIsRight();
+		
+    }
+	else{
+		answerIsWrong() ;
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+			if (score >= 4) {
 	document.getElementById("line").style.display = "block";
+	
+ }
+		
+    }else{
+        // end the quiz and show the score
+        scoreRender();
+    }
+	
 }
-function add2() {
-wrong += 1;
-document.getElementById("wrong").innerHTML = "Wrong: " + wrong;
-}
-function add1() {
-score += 1;
-document.getElementById("correct").innerHTML = "Correct: " + score;
-}
-//gets rid of instructions at start
-function rid() {
-document.getElementById("instruct").style.display = "none";
-document.getElementById("start").style.display = "none";
-document.getElementById("one").style.display = "block";
 
-}
-function func(score, total = 12) {
-	console.log("You got " + score + " out of " + total);
-	return "You got " + score + " out of " + total;
+function answerIsRight() {
+	score += 1;
+
+question.classList.add('right');
+setTimeout(function() {
+question.classList.remove('right'); }, 300)
 }
 
 
-//linelife
+function answerIsWrong(){
+question.classList.add('wrong');
+setTimeout(function() {
+question.classList.remove('wrong'); }, 300)
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+//50:50 Life line//////
+///////////////////////////////////////////////////////////////////////////////
+//
+//The help() function will take away two wrong answers with the class of 'choice2'
 function help(){
-var wans = document.querySelectorAll("[class='button2']");
-
-for(var i = 0; i < wans.length; i++) 
-  wans[i].style.display='none';
-document.getElementById("lifeline").style.display = "none";
-}
-function help2() {
-var wans = document.querySelectorAll("[class='button2']");
+var wans = document.querySelectorAll("[class='choice2']");
+	
+	for (var i = 0; i < wans.length; i++)
+		wans[i].style.display='none';
+	document.getElementById("lifeline").style.display = "none";
+ }
+//The reverse function will replace the wrong answers into the quiz so they are ready for the next level
+function reverse() {
+var wans = document.querySelectorAll("[class='choice2']");
 
 for(var i = 0; i < wans.length; i++) 
   wans[i].style.display='inline-block';
 }
-//change questions
-function change() {
-document.getElementById("two").style.display = "block";
-document.getElementById("one").style.display = "none";
-
-}
-
-function change2() {
-document.getElementById("three").style.display = "block";
-document.getElementById("two").style.display = "none";
-
-
-}
-
-function change3() {
-document.getElementById("four").style.display = "block";
-document.getElementById("three").style.display = "none";
-
-}
-function change4() {
-document.getElementById("five").style.display = "block";
-document.getElementById("four").style.display = "none";
-
-}
-
-function change5() {
-document.getElementById("six").style.display = "block";
-document.getElementById("five").style.display = "none";
-
-}
-function change6() {
-document.getElementById("seven").style.display = "block";
-document.getElementById("six").style.display = "none";
-}
-function change7() {
-document.getElementById("eight").style.display = "block";
-document.getElementById("seven").style.display = "none";
-}
-function change8() {
-document.getElementById("nine").style.display = "block";
-document.getElementById("eight").style.display = "none";
-
-}
-function change9() {
-document.getElementById("ten").style.display = "block";
-document.getElementById("nine").style.display = "none";
-
-}
-function change10() {
-document.getElementById("eleven").style.display = "block";
-document.getElementById("ten").style.display = "none";
-
-}
-function change11() {
-document.getElementById("twelve").style.display = "block";
-document.getElementById("eleven").style.display = "none";
-
-}
-function change12() {
-document.write("<p>You got " + score + " out of 12 questions correct.</p>");
- if (score === 12) {
-	 document.write("<p><strong> You are the master questionaire!</strong></p>")
-} else if ( score >=  10) {
-	document.write("<p><strong> You earned a gold crown!<!strong></p>");
-} else if ( score >= 8) {
-	document.write("<p><strong> You earned a silver crown!</strong></p>");
-} else if ( score === 7) {
-	document.write("<p><strong> You earned a bronze crown!</strong></p>");
-} else  {
-	document.write("<p><strong> No crown for you. You need to study.</strong></p>");
-}
-}
-//*****************************************************************************************************************************
-
-
-// change button colors.
-
-function setColor1(){
-document.getElementById("button1").style.backgroundColor='#119911';
-}
-function setColor2(){
-document.getElementById("button2").style.backgroundColor='#991111';
-} 
-function setColor3(){
-document.getElementById("button3").style.backgroundColor='#991111';
-}
-function setColor4(){
-document.getElementById("button4").style.backgroundColor='#991111';
-}
-function setColor5(){
-document.getElementById("button5").style.backgroundColor='#991111';
-}
-function setColor6(){
-document.getElementById("button6").style.backgroundColor='#991111';
-}
-function setColor7(){
-document.getElementById("button7").style.backgroundColor='#991111';
-}
-function setColor8(){
-document.getElementById("button8").style.backgroundColor='#119911';
-}
-function setColor9(){
-document.getElementById("button9").style.backgroundColor='#991111';
-}
-function setColor10(){
-document.getElementById("button10").style.backgroundColor='#991111';
-}
-function setColor11(){
-document.getElementById("button11").style.backgroundColor='#119911';
-}
-function setColor12(){
-document.getElementById("button12").style.backgroundColor='#991111';
-}
-function setColor13(){
-document.getElementById("button13").style.backgroundColor='#991111';
-}
-function setColor14(){
-document.getElementById("button14").style.backgroundColor='#119911';
-}
-function setColor15(){
-document.getElementById("button15").style.backgroundColor='#991111';
-}
-function setColor16(){
-document.getElementById("button16").style.backgroundColor='#991111';
-}
-function setColor17(){
-document.getElementById("button17").style.backgroundColor='#991111';
-}
-function setColor18(){
-document.getElementById("button18").style.backgroundColor='#119911';
-}
-function setColor19(){
-document.getElementById("button19").style.backgroundColor='#991111';
-}
-function setColor20(){
-document.getElementById("button20").style.backgroundColor='#991111';
-}
-function setColor21(){
-document.getElementById("button21").style.backgroundColor='#991111';
-}
-function setColor22(){
-document.getElementById("button22").style.backgroundColor='#991111';
-}
-function setColor23(){
-document.getElementById("button23").style.backgroundColor='#991111';
-}
-function setColor24(){
-document.getElementById("button24").style.backgroundColor='#119911';
-}
-function setColor25(){
-document.getElementById("button25").style.backgroundColor='#991111';
-}
-function setColor26(){
-document.getElementById("button26").style.backgroundColor='#119911';
-}
-function setColor27(){
-document.getElementById("button27").style.backgroundColor='#991111';
-}
-function setColor28(){
-document.getElementById("button28").style.backgroundColor='#991111';
-}
-function setColor29(){
-document.getElementById("button29").style.backgroundColor='#119911';
-}
-function setColor30(){
-document.getElementById("button30").style.backgroundColor='#991111';
-}
-function setColor31(){
-document.getElementById("button31").style.backgroundColor='#991111';
-}
-function setColor32(){
-document.getElementById("button32").style.backgroundColor='#991111';
-}
-function setColor33(){
-document.getElementById("button33").style.backgroundColor='#991111';
-}
-function setColor34(){
-document.getElementById("button34").style.backgroundColor='#119911';
-}
-function setColor35(){
-document.getElementById("button35").style.backgroundColor='#991111';
-}
-function setColor36(){
-document.getElementById("button36").style.backgroundColor='#991111';
-}
-function setColor37(){
-document.getElementById("button37").style.backgroundColor='#119911';
-}
-function setColor38(){
-document.getElementById("button38").style.backgroundColor='#991111';
-}
-function setColor39(){
-document.getElementById("button39").style.backgroundColor='#991111';
-}
-function setColor40(){
-document.getElementById("button40").style.backgroundColor='#991111';
-}
-function setColor41(){
-document.getElementById("button41").style.backgroundColor='#991111';
-}
-function setColor42(){
-document.getElementById("button42").style.backgroundColor='#119911';
-}
-function setColor43(){
-document.getElementById("button43").style.backgroundColor='#991111';
-}
-function setColor44(){
-document.getElementById("button44").style.backgroundColor='#991111';
-}
-function setColor45(){
-document.getElementById("button45").style.backgroundColor='#119911';
-}
-function setColor46(){
-document.getElementById("button46").style.backgroundColor='#991111';
-}
-function setColor47(){
-document.getElementById("button47").style.backgroundColor='#991111';
-}
-function setColor48(){
-document.getElementById("button48").style.backgroundColor='#991111';
-}
-
-//*****************************************************************************************************************
+///////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
+// score render
+function scoreRender(){
+    scoreDiv.style.display = "block";
+    // calculate the amount of question percent answered by the user
+    const scorePerCent = Math.round(100 * score/questions.length);
+    scoreDiv.innerHTML += "<div id='scoreBoard'>" + "<p>"+ scorePerCent +"%</p>"+ "</div>";
+	document.getElementById("choices").style.display = "none";
+	document.getElementById("question").innerHTML = "You have scored"
+	
+}
 
-// answers
-function answer1() {
-document.getElementById("dog").innerHTML="Yes! you are right!";      
-add1();
-}
-function answer2() {
-document.getElementById("dog").innerHTML=comments[0];
-add2 ();
-}
-function answer3() {
-document.getElementById("dog").innerHTML=comments[2];
-add2 ();
-}
-function answer4() {
-document.getElementById("dog").innerHTML=comments[1];
-add2()
-}
-function answer5() {
-document.getElementById("dog2").innerHTML=comments[0];
-add2()
-}
-function answer6() {
-document.getElementById("dog2").innerHTML=comments[1];
-add2()
-}
-function answer7() {
-document.getElementById("dog2").innerHTML=comments[0];
-add2()
-}
-function answer8() {
-document.getElementById("dog2").innerHTML="Correct!.";
-add1();
-}
-function answer9() {
-document.getElementById("dog3").innerHTML=comments[2];
-add2()
-}
-function answer10() {
-document.getElementById("dog3").innerHTML=comments[0];
-add2()
-}
-function answer11() {
-document.getElementById("dog3").innerHTML="Good job!";
-add1();
-}
-function answer12() {
-document.getElementById("dog3").innerHTML=comments[2];
-add2()
-}
-function answer13() {
-document.getElementById("dog4").innerHTML=comments[0];
-add2()
-}
-function answer14() {
-document.getElementById("dog4").innerHTML="Right!";
-add1();
-}
-function answer15() {
-document.getElementById("dog4").innerHTML=comments[1];
-add2()
-}
-function answer16() {
-document.getElementById("dog4").innerHTML=comments[0];
-add2()
-}
-function answer17() {
-document.getElementById("dog5").innerHTML=comments[3];
-add2()
-}
-function answer18() {
-document.getElementById("dog5").innerHTML="Good job!";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer19() {
-document.getElementById("dog5").innerHTML=comments[2];
-add2()
-}
-function answer20() {
-document.getElementById("dog5").innerHTML=comments[2];
-add2()
-}
-function answer21() {
-document.getElementById("dog6").innerHTML=comments[1];
-add2()
-}
-function answer22() {
-document.getElementById("dog6").innerHTML=comments[0];
-add2()
-}
-function answer23() {
-document.getElementById("dog6").innerHTML=comments[0];
-add2()
-}
-function answer24() {
-document.getElementById("dog6").innerHTML="Correct answer.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer25() {
-document.getElementById("dog7").innerHTML=comments[3];
-add2()
-}
-function answer26() {
-document.getElementById("dog7").innerHTML="That is true.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer27() {
-document.getElementById("dog7").innerHTML=comments[0];
-add2()
-}
-function answer28() {
-document.getElementById("dog7").innerHTML=comments[3];
-add2()
-}
-function answer29() {
-document.getElementById("dog8").innerHTML="Good job!.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer30() {
-document.getElementById("dog8").innerHTML=comments[1];
-add2 ();
-}
-function answer31() {
-document.getElementById("dog8").innerHTML=comments[2];
-add2()
-}
-function answer32() {
-document.getElementById("dog8").innerHTML=comments[0];
-add2()
-}
-function answer33() {
-document.getElementById("dog9").innerHTML=comments[3];
-add2()
-}
-function answer34() {
-document.getElementById("dog9").innerHTML="Yes, good job.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer35() {
-document.getElementById("dog9").innerHTML=comments[2];
-add2()
-}
-function answer36() {
-document.getElementById("dog9").innerHTML=comments[0];
-add2()
-}
-function answer37() {
-document.getElementById("dog10").innerHTML="That is true";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer38() {
-document.getElementById("dog10").innerHTML=comments[1];
-add2()
-}
-function answer39() {
-document.getElementById("dog10").innerHTML=comments[1];
-add2()
-}
-function answer40() {
-document.getElementById("dog10").innerHTML=comments[0];
-add2()
-}
-function answer41() {
-document.getElementById("dog11").innerHTML=comments[2];
-add2()
-}
-function answer42() {
-document.getElementById("dog11").innerHTML="Good job!.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer43() {
-document.getElementById("dog11").innerHTML=comments[3];
-add2()
-}
-function answer44() {
-document.getElementById("dog11").innerHTML=comments[2];
-add2()
-}
-function answer45() {
-document.getElementById("dog12").innerHTML="Correct!.";
-add1();
-if (score >= 5) {
-	document.getElementById("line").style.display = "block";
-}
-}
-function answer46() {
-document.getElementById("dog12").innerHTML=comments[0];
-add2()
-}
-function answer47() {
-document.getElementById("dog12").innerHTML=comments[1];
-add2()
-}
-function answer48() {
-document.getElementById("dog12").innerHTML=comments[2];
-add2()
-}
+			
+//			
+			/*function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+				document.getElementById("submit").style.display = "block";
+				function addQuestion(questions, quizContainer){
+					var output = [];
+					var choices;
+					//const text = document.createTextNode(questions[Math.floor(Math.random()*questions.length)].question);
+					for (var i = 0; i < questions.length; i++){
+					
+						choices = [];
+						
+						for(letter in questions[i].choices){
+						
+						choices.push(
+							'<label>'
+								+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+								+ letter + ': '
+								+ questions[i].choices[letter]
+								+ '</label>'
+							);
+						}
+						output.push(
+							'<div class="question">' + questions[i].question + '</div>'
+							+ '<div class="choices">' + choices.join('') + '</div>'
+							);
+							
+						}
+						
+						quizContainer.innerHTML = output.join('');
+						
+				}
+			/*function showResults(questions, quizContainer, resultsContainer){
+				var answerContainer = quizContainer.querySelectorAll('.choices');
+				
+				var userAnswer;
+				
+				for (var i=0; i<questions.length; i++){
+				
+				userAnswer = (answerContainer[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+				
+				if(userAnswer === questions[i].correct){
+				
+					score++;
+					
+					answerContainer[i].style.color = 'lightgreen';
+				}
+				else{
+				answerContainer[i].style.color = 'red';
+				}
+			}
+			resultsContainer.innerHTML = score + ' out of ' + questions.length;
+			
+		}*/
+			//addQuestion(questions, quizContainer);
+			
+		/*	submitButton.onclick = function() {
+				showResults(questions, quizContainer, resultsContainer);
+			}
+		}*/
+		
+		
+				
+				/*var para = document.getElementById("qD1");
+				para.appendChild(text);
+				var styles = {
+					"width":"50%",
+					"font-size": "35px",
+					"display": "block",
+					"border": "4px dashed royalblue",
+					"border-radius": "75px",
+					"text-align": "center",
+					"margin-left": "auto",
+					"margin-right": "auto"
+				};
+				//var mD = document.getElementById("mainDisplay");
+				//var styles2 = {
+				//
+				//}
+				
+				Object.assign(para.style, styles);*/
+				
+			
+			/*function updateCountdown() {
+				var seconds = time % 21;
+				seconds = seconds < 10 ? '0' + seconds : seconds;
+				document.getElementById('displayTime').innerHTML = ':' + seconds;
+				time--;
+				clearInterval(stop);
+				}
+			var stop = setInterval(updateCountdown, 1000);*/
+			
+			
+		/*function add1() {
+		score += 1;
+		document.getElementById("displayScore").innerHTML = score;
+		if (score >= 4) {
+			document.getElementById("lifeLine1").style.display = "block";
+		}
+		}	
+		
+//This function will display the results, it is currently in the temporary stage.
+		function results(score, total = 12) {
+			console.log("You got " + score + " out of " + total);
+			return "You got " + score + " out of " + total;
+		}	
+		*/
+		

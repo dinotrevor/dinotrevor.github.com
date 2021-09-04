@@ -25,21 +25,15 @@ Working on functions for a quiz game.
 			<div  id="displayName" style="display:none;"></div>
 			<div id ="line" style="display:none;">
 				<h1 id="lifelines">LifeLines</h1>
-				<button id = "lifeline" type ="button" onclick ="help()"><p>50 : 50</p></button>
+				<button id = "lifeline" type ="button" onclick ="help()"><p>50:50</p></button>
 			</div>
     		<div id="question" class="normal" ></div>
    			<div id="choices">
         		<div class="choice2" id="A" onclick="checkAnswer('A')"></div>
         		<div class="choice" id="B" onclick="checkAnswer('B'), reverse()"></div>
         		<div class="choice" id="C" onclick="checkAnswer('C'), reverse()"></div>
-			<div class="choice2" id="D" onclick="checkAnswer('D')"></div>
+				<div class="choice2" id="D" onclick="checkAnswer('D')"></div>
     		</div>
-    		<div id="timer">
-        		<div id="counter"></div>
-        		<div id="btimeGauge"></div>
-        		<div id="timeGauge"></div>
-			</div>
-    		<div id="progress"></div>
     	</div>
     	<div id="score" style="display: none"></div>
 	</div>

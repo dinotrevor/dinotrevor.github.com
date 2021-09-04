@@ -128,11 +128,7 @@ const scoreDiv = document.getElementById("score");
 			}*/
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 0;
 var score = 0;
-
-let q = questions[runningQuestion];
-
 function renderQuestion(){
     let q = questions[runningQuestion];
     
@@ -145,20 +141,18 @@ function renderQuestion(){
 }
 
 
-//start.addEventListener("click", startQuiz);
+//document.getElementByID('start').addEventListener("click", startQuiz);
 
 
 // start quiz
 function startQuiz(){
-    start.style.display = "none";
+    document.getElementByID('start').style.display = "none";
 	var name = prompt("Please create a username!");
 	document.getElementById("displayName").innerHTML = name;
 	document.getElementById("displayName").style.display = "block";
 	document.getElementById("displayWelcome").style.display = "none";
     renderQuestion();
-    quiz.style.display = "block";
-
-	
+    quiz.style.display = "block";	
 }
 
 
@@ -236,115 +230,10 @@ function scoreRender(){
     const scorePerCent = Math.round(100 * score/questions.length);
     scoreDiv.innerHTML += "<div id='scoreBoard'>" + "<p>"+ scorePerCent +"%</p>"+ "</div>";
 	document.getElementById("choices").style.display = "none";
-	document.getElementById("question").innerHTML = "You have scored"
-	
+	document.getElementById("question").innerHTML = "You have scored"	
 }
 
 			
-//			
-			/*function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-				document.getElementById("submit").style.display = "block";
-				function addQuestion(questions, quizContainer){
-					var output = [];
-					var choices;
-					//const text = document.createTextNode(questions[Math.floor(Math.random()*questions.length)].question);
-					for (var i = 0; i < questions.length; i++){
-					
-						choices = [];
-						
-						for(letter in questions[i].choices){
-						
-						choices.push(
-							'<label>'
-								+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-								+ letter + ': '
-								+ questions[i].choices[letter]
-								+ '</label>'
-							);
-						}
-						output.push(
-							'<div class="question">' + questions[i].question + '</div>'
-							+ '<div class="choices">' + choices.join('') + '</div>'
-							);
-							
-						}
-						
-						quizContainer.innerHTML = output.join('');
-						
-				}
-			/*function showResults(questions, quizContainer, resultsContainer){
-				var answerContainer = quizContainer.querySelectorAll('.choices');
-				
-				var userAnswer;
-				
-				for (var i=0; i<questions.length; i++){
-				
-				userAnswer = (answerContainer[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-				
-				if(userAnswer === questions[i].correct){
-				
-					score++;
-					
-					answerContainer[i].style.color = 'lightgreen';
-				}
-				else{
-				answerContainer[i].style.color = 'red';
-				}
-			}
-			resultsContainer.innerHTML = score + ' out of ' + questions.length;
-			
-		}*/
-			//addQuestion(questions, quizContainer);
-			
-		/*	submitButton.onclick = function() {
-				showResults(questions, quizContainer, resultsContainer);
-			}
-		}*/
-		
-		
-				
-				/*var para = document.getElementById("qD1");
-				para.appendChild(text);
-				var styles = {
-					"width":"50%",
-					"font-size": "35px",
-					"display": "block",
-					"border": "4px dashed royalblue",
-					"border-radius": "75px",
-					"text-align": "center",
-					"margin-left": "auto",
-					"margin-right": "auto"
-				};
-				//var mD = document.getElementById("mainDisplay");
-				//var styles2 = {
-				//
-				//}
-				
-				Object.assign(para.style, styles);*/
-				
-			
-			/*function updateCountdown() {
-				var seconds = time % 21;
-				seconds = seconds < 10 ? '0' + seconds : seconds;
-				document.getElementById('displayTime').innerHTML = ':' + seconds;
-				time--;
-				clearInterval(stop);
-				}
-			var stop = setInterval(updateCountdown, 1000);*/
-			
-			
-		/*function add1() {
-		score += 1;
-		document.getElementById("displayScore").innerHTML = score;
-		if (score >= 4) {
-			document.getElementById("lifeLine1").style.display = "block";
-		}
-		}	
-		
-//This function will display the results, it is currently in the temporary stage.
-		function results(score, total = 12) {
-			console.log("You got " + score + " out of " + total);
-			return "You got " + score + " out of " + total;
-		}	
-		*/
+
+
 		

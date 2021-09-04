@@ -146,7 +146,7 @@ function renderQuestion(){
 
 // start quiz
 function startQuiz(){
-    document.getElementByID('start').style.display = "none";
+    start.style.display = "none";
 	var name = prompt("Please create a username!");
 	document.getElementById("displayName").innerHTML = name;
 	document.getElementById("displayName").style.display = "block";

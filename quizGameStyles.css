@@ -25,7 +25,33 @@ font-family: 'Courier New', monospace;
 }
 
 #lifeline{
-	font-size:20px;
+	font-size:16px;
+	color:white;
+	text-shadow: 2px 2px 2px black;
+	border:5px dashed darkslategrey;
+	background-color:darkorchid;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+	border-radius:90px;
+	width:20%;
+	
+}
+#lifeline2{
+	font-size:16px;
+	color:white;
+	text-shadow: 2px 2px 2px black;
+	border:5px dashed darkslategrey;
+	background-color:darkorchid;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+	border-radius:90px;
+	width:20%;
+	
+}
+#lifeline3{
+	font-size:16px;
 	color:white;
 	text-shadow: 2px 2px 2px black;
 	border:5px dashed darkslategrey;
@@ -177,8 +203,8 @@ border:1px solid white;
   height: 100%;
   width: 90%;
 
-  -webkit-animation: 2s linear 0s infinite alternate move_eye;
-          animation: 2s linear 0s infinite  move_eye;
+  -webkit-animation: 3s linear 0s infinite alternate move_eye;
+          animation: 3s linear 0s infinite  move_eye;
 }
 
 @-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }

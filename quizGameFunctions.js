@@ -95,7 +95,7 @@ const scoreDiv = document.getElementById("score");
 		question: "Who was John Glen?",
 		choiceA : "Inventor of Box-Tops",
 		choiceB : "Founder of the City of Glendale",
-		choiceC : "First man the Orbit the Earth",
+		choiceC : "First man to Orbit the Earth",
 		choiceD : "Maker of HTML",
 		correct: 'C',
 		incorrectA: 'A',
@@ -147,10 +147,12 @@ function renderQuestion(){
 // start quiz
 function startQuiz(){
     start.style.display = "none";
-	var name = prompt("Please create a username!");
-	document.getElementById("displayName").innerHTML = name;
-	document.getElementById("displayName").style.display = "block";
+	//var name = prompt("Please create a username!");
+	//document.getElementById("displayName").innerHTML = name;
+	//document.getElementById("displayName").style.display = "block";
 	document.getElementById("displayWelcome").style.display = "none";
+	document.getElementById("quest").style.display ="none";
+	document.getElementById("quest2").style.display ="block";
     renderQuestion();
     quiz.style.display = "block";	
 }
@@ -186,16 +188,23 @@ function checkAnswer(answer){
 function answerIsRight() {
 	score += 1;
 
-question.classList.add('right');
+question.classList.add('cylon_eye4');
+document.getElementById("right").style.display = "inline-block";
 setTimeout(function() {
-question.classList.remove('right'); }, 300)
+	document.getElementById("right").style.display = "none";
+question.classList.remove('cylon_eye4'); }, 300)
+	
+	
 }
 
 
 function answerIsWrong(){
-question.classList.add('wrong');
+question.classList.add('cylon_eye3');
+	document.getElementById("wrong").style.display = "inline-block";
 setTimeout(function() {
-question.classList.remove('wrong'); }, 300)
+	document.getElementById("wrong").style.display = "none";
+question.classList.remove('cylon_eye3'); }, 300)
+	
 }
 
 
@@ -226,11 +235,13 @@ for(var i = 0; i < wans.length; i++)
 // score render
 function scoreRender(){
     scoreDiv.style.display = "block";
+	document.getElementById("quest2").style.display = "none";
+	document.getElementById("line").style.display = "none";
     // calculate the amount of question percent answered by the user
     const scorePerCent = Math.round(100 * score/questions.length);
-    scoreDiv.innerHTML += "<div id='scoreBoard'>" + "<p>"+ scorePerCent +"%</p>"+ "</div>";
+    scoreDiv.innerHTML += "<div id='scoreBoard'>" + "<p>"+ "You have scored " + scorePerCent +"%</p>"+ "</div>";
 	document.getElementById("choices").style.display = "none";
-	document.getElementById("question").innerHTML = "You have scored"	
+		
 }
 
 			

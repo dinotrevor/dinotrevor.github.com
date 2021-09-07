@@ -6,6 +6,7 @@ background-color: #2f012b;
 font-family: 'Courier New', monospace;
 	color:white;
 	text-align:center;
+	margin:0px;
 }
 
 #line{
@@ -84,7 +85,7 @@ font-family: 'Courier New', monospace;
 	border:2px dotted white;
 }
 #displayName {
-	width:33%;
+	width:100%;
 	margin-right:auto;
 	margin-left:auto;
 	text-align:center;
@@ -96,7 +97,7 @@ font-family: 'Courier New', monospace;
 	border:2px dotted white;
 	
 }
-#littleTree {
+.littleTree {
 width:100%;
 	margin-bottom:25px;
 

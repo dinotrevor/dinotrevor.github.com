@@ -473,6 +473,17 @@ width:33%;
   cursor: pointer;
 	transistion: 5s;
 }
+#overlay2 {
+  display: none;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+	transistion: 5s;
+}
 
 #phone {
 	font-size:20px;
@@ -481,6 +492,7 @@ width:33%;
 	
 	
 }
+
 #close{
 	background-color:rgba(0,0,0,0.5);
 	font-size:30px;
@@ -490,6 +502,14 @@ width:33%;
 	border:1px solid white;
 }
 
+#close2{
+	background-color:rgba(0,0,0,0.5);
+	font-size:30px;
+	width:15%;
+	margin-right:auto;
+	margin-left:auto;
+	border:1px solid white;
+}
 
 
 

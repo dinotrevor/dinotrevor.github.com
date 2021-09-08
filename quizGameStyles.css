@@ -25,21 +25,20 @@ font-family: 'Courier New', monospace;
 #line{
 	background-color:rgba(0,0,0, 0.0);
 	opacity:0.7;
-	right:-85;
+	
 	
 	
 }
 
 .lifelines{
   width: 18%;
-  padding:0px;
+  padding:10px;
 font-size:20px;
 	text-align:center;
 	border:2px solid black;
 	border-radius:360px;
 	box-shadow: 2px 2px 30px 10px black;
-	float:left;
-	position:static;
+	
 	  background-color: rgbargba(33, 5, 57, 0.87);
   background-image: linear-gradient(to right,
 	  rgba(0, 0, 0, .1) 1%,
@@ -107,13 +106,16 @@ margin-bottom:20px;
 
 
 #scoreBoard{
-	width:50%;
+	width:67%;
 	margin-left:auto;
 	margin-right:auto;
 	background-color:darkslategrey;
 	font-size:30px;
 	border:3px dotted maroon;
-	
+	justify-content:center;
+align-items:center;
+	text-align:center;
+	float:left;
 	
 }
 /* .mainButtons {
@@ -316,7 +318,7 @@ border:1px solid white;
 
 .button-64:active,
 .button-64:hover {
-  outline: 0;
+  outline: 10px;
 }
 
 .button-64 span {
@@ -331,7 +333,6 @@ border:1px solid white;
   width: 100%;
   height: 100%;
   transition: 2s;
-	opacity:0.7;
 	justify-content:center;
 align-items:center;
 	text-align:center;
@@ -342,12 +343,17 @@ align-items:center;
 	display:block;
 }
 .text{
-	opacity:1.0;
+	opacity:0.8;
 	
 }
 
 .button-64:hover span {
-  background: none;
+ 	background-color:white;
+	transition:5s;
+}
+.button-64:focus {
+
+	
 }
 
 
@@ -403,7 +409,7 @@ align-items:center;
 display:flex;
 float:left;
 width:100%;
-	height:100px;
+height:100px;
 
 }
 
@@ -422,6 +428,25 @@ footer {
 			text-shadow: 1px 1px 1px white;
 			font-weight:500;
 		}
+
+
+.medals {
+	width:100%;
+	background-color:rgba(0,0,0, 0.1);
+	height:145px;
+	
+	
+}
+
+
+.rewards {
+display:flex;
+width:33%;
+	float:left;
+
+}
+
+
 
 
 

@@ -44,8 +44,11 @@ Working on functions for a quiz game.
 <div id ="line" style="display:none;"> 
 
   <button id = "lifeline" class="lifelines" type ="button" onclick ="help()"><p>50:50</p></button>
-  <!--<li><button id = "lifeline2" class="lifelines" type ="button" onclick ="help2()"><p>Ask</p></button></li>
-  <li><button id = "lifeline3" class="lifelines" type ="button" onclick ="help3()"><p>Phone</p></button></li>-->
+	
+  <button id = "lifeline2" class="lifelines" type ="button" onclick ="help2()"><p>Ask</p></button>
+  
+  <button id = "lifeline3" class="lifelines" type ="button" onclick ="help3()"><p>Phone</p></button>
+
 </div>
 			
 			
@@ -80,7 +83,16 @@ Working on functions for a quiz game.
 				<div class="choice2" id="D" onclick="checkAnswer('D')"></div>
     		</div>
     	</div>
-    	<div id="score" style="display: none"></div>
+    	<div id="score" style="display: none">
+			
+			<div class="rewards" id="gold" style="display:none;"><object data="../images/gold.svg" type="image/svg+xml" id="medal1" class="medals"></object></div>
+			
+			<div class="rewards" id="silver" style="display:none;"><object data="../images/silver.svg" type="image/svg+xml" id="medal2" class="medals"></object></div>
+			
+			<div class="rewards" id="bronze" style="display:none;"><object data="../images/bronze.svg" type="image/svg+xml" id="medal3" class="medals"></object></div>
+			
+
+		</div>
 
 	
 			<footer>
@@ -90,5 +102,11 @@ Working on functions for a quiz game.
 				</p></footer>
 		</div>
 <script src="quizGameFunctions.js"></script>
+	<div id="audio" style="display:block;">
+		<audio controls>
+  <source src="../audio/Prince Ali.mp3" type="audio/mpeg">
+
+</audio>
+	</div>
 </body>
 </html>

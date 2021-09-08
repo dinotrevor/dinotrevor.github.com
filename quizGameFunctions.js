@@ -114,6 +114,7 @@ const scoreDiv = document.getElementById("score");
 		incorrectD: 'D'
 		}
 		];	
+const rnd =(questions) => {return questions[Math.floor(Math.random() * questions.length)]};
 		
 //This function starts the games after the user enters a username to play with, which will be displayed on the screen next to their current score *and the 30 second timer*.	
 		/*function start() {
@@ -131,7 +132,6 @@ const scoreDiv = document.getElementById("score");
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let randomQuestion = questions[Math.random() * questions.length>>0];
-randomQuestion += runningQuestion;
 var score = 0;
 function renderQuestion(){
     let q = questions[runningQuestion];
@@ -196,7 +196,7 @@ function answerIsRight() {
 score += 1;
 document.getElementById("feed1").style.display = "inline-block";
 setTimeout(function() {
-document.getElementById("feed1").style.display = "none"; }, 500);
+document.getElementById("feed1").style.display = "none"; }, 1000);
 	
 }
 
@@ -205,7 +205,7 @@ function answerIsWrong(){
 	document.getElementById("feed2").style.display = "inline-block";
 setTimeout(function() {
 	document.getElementById("feed2").style.display = "none";
- }, 500);
+ }, 1000);
 	
 }
 
@@ -243,8 +243,21 @@ function scoreRender(){
     const scorePerCent = Math.round(100 * score/questions.length);
     scoreDiv.innerHTML += "<div id='scoreBoard'>" + "<p>"+ "You have scored " + scorePerCent +"%</p>"+ "</div>";
 	document.getElementById("choices").style.display = "none";
-		
-}
+	if (score == 10){
+		 document.getElementById("gold").style.display = "block";
+	}
+	else if (score >= 8){
+			document.getElementById("silver").style.display = "block";
+	}
+	else if (score >= 6) {
+		document.getElementById("bronze").style.display = "block";
+	}
+	else {
+		document.getElementById("runnerUp").style.display ="block";
+	}
+			
+	}
+
 
 			
 

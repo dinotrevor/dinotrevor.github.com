@@ -1,4 +1,5 @@
-// JavaScript Documentconst start = document.getElementById("start");
+// JavaScript Document
+const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 const choiceA = document.getElementById("A");
@@ -32,7 +33,7 @@ const scoreDiv = document.getElementById("score");
 		incorrectD: 'D'
 		},
 		{
-		question: "How much donuts is in a bakers dozen?",
+		question: "How many donuts is in a bakers dozen?",
 		choiceA : "12",
 		choiceB : "11",
 		choiceC : "13",
@@ -101,6 +102,7 @@ const scoreDiv = document.getElementById("score");
 		incorrectA: 'A',
 		incorrectD: 'D'
 		},
+			
 		{
 		question: "How far is the moon from earth?",
 		choiceA : "330,050 miles",
@@ -128,10 +130,11 @@ const scoreDiv = document.getElementById("score");
 			}*/
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
+let randomQuestion = questions[Math.random() * questions.length>>0];
+randomQuestion += runningQuestion;
 var score = 0;
 function renderQuestion(){
     let q = questions[runningQuestion];
-    
     question.innerHTML = "<p>"+ q.question +"</p>";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
@@ -147,6 +150,8 @@ function renderQuestion(){
 // start quiz
 function startQuiz(){
     start.style.display = "none";
+	instruct.style.display = "none";
+	
 	//var name = prompt("Please create a username!");
 	//document.getElementById("displayName").innerHTML = name;
 	//document.getElementById("displayName").style.display = "block";
@@ -154,7 +159,8 @@ function startQuiz(){
 	document.getElementById("quest").style.display ="none";
 	document.getElementById("quest2").style.display ="block";
     renderQuestion();
-    quiz.style.display = "block";	
+    quiz.style.display = "block";
+	
 }
 
 
@@ -174,7 +180,8 @@ function checkAnswer(answer){
         runningQuestion++;
         renderQuestion();
 			if (score >= 4) {
-	document.getElementById("line").style.display = "block";
+				line.style.display = "block";
+	
 	
  }
 		
@@ -186,24 +193,19 @@ function checkAnswer(answer){
 }
 
 function answerIsRight() {
-	score += 1;
-
-question.classList.add('cylon_eye4');
-document.getElementById("right").style.display = "inline-block";
+score += 1;
+document.getElementById("feed1").style.display = "inline-block";
 setTimeout(function() {
-	document.getElementById("right").style.display = "none";
-question.classList.remove('cylon_eye4'); }, 300)
-	
+document.getElementById("feed1").style.display = "none"; }, 500);
 	
 }
 
 
 function answerIsWrong(){
-question.classList.add('cylon_eye3');
-	document.getElementById("wrong").style.display = "inline-block";
+	document.getElementById("feed2").style.display = "inline-block";
 setTimeout(function() {
-	document.getElementById("wrong").style.display = "none";
-question.classList.remove('cylon_eye3'); }, 300)
+	document.getElementById("feed2").style.display = "none";
+ }, 500);
 	
 }
 

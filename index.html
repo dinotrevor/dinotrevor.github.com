@@ -23,32 +23,56 @@ Working on functions for a quiz game.
 <!--<div id="mainDisplay" style="display:none;">-->
 <!--button id="submit" style="display:none;" >Submit</button>-->
 	<div id="container">
-
-		<div class="littleTree" id="littleTree" style="display:block;"><object data="../images/littleTreeWeb.svg" type="image/svg+xml" id="logo"></object><!--<img src="../images/littletree.jpg" />--></div>
+	
+		
+		<!--<div class="littleTree" id="littleTree" style="display:block;"><object data="../images/littleTreeWeb.svg" type="image/svg+xml" id="logo"></object></div>-->
+		
+				<div id="instruct"><p id="greet">Press the start button to begin.</p></div>
 		<div id="displayWelcome">
-<header id ="quest" class="view_port" style="display:block;">
+<div id ="quest" class="view_port" style="display:inline-block;">
   <h1 id="title" class="title">
     Questionnaire
   </h1>
   <div  class="cylon_eye"></div>
-</header>	
+</div>	
 		</div>
-        <button id="start" class="button-64" role="button" onclick="startQuiz()"><span class="text"><p class="text2">Start</p></span></button>
-        <div  id="displayName" style="display:none;"></div>
+        <button id="start" class="button-64" role="button" onclick="startQuiz()"><span class="text">Start</span></button>
+   
 		<div id="quiz" style="display: none">
+		
+	
+<div id ="line" style="display:none;"> 
+
+  <button id = "lifeline" class="lifelines" type ="button" onclick ="help()"><p>50:50</p></button>
+  <!--<li><button id = "lifeline2" class="lifelines" type ="button" onclick ="help2()"><p>Ask</p></button></li>
+  <li><button id = "lifeline3" class="lifelines" type ="button" onclick ="help3()"><p>Phone</p></button></li>-->
+</div>
 			
-			<div id ="line" style="display:none;">
-				<h2>Life Lines</h2>
-				<button id = "lifeline" type ="button" onclick ="help()"><p>50:50</p></button>
-				<button id = "lifeline2" type ="button" onclick ="help2()"><p>Ask</p></button>
-				<button id = "lifeline3" type ="button" onclick ="help3()"><p>Phone</p></button>
-			</div>
+			
+			
+			
 			<div id = "quest2" class="view_port2">
   			<div id ="question" class="title2" ></div>
-				<div id ="right" style="display:none;"></div>
-				<div id ="wrong"  style="display:none;"></div>
   			<div  class="cylon_eye2"></div>
 			</div>
+			
+			
+			<div id="feed1" class="view_port3" style="display:none;">
+				<div id ="right" class="title3">Correct!</div>
+				<div  class="cylon_eye4"></div>
+		</div>
+			<div id="feed2" class="view_port3" style="display:none;">
+			<div id ="wrong" class="title3">Wrong!</div>
+				<div  class="cylon_eye3"></div>
+			</div>
+			
+			
+			
+		
+			
+			
+			
+			
    			<div id="choices">
         		<div class="choice2" id="A" onclick="checkAnswer('A')"></div>
         		<div class="choice" id="B" onclick="checkAnswer('B'), reverse()"></div>
@@ -57,9 +81,14 @@ Working on functions for a quiz game.
     		</div>
     	</div>
     	<div id="score" style="display: none"></div>
-	</div>
-	<!-- HTML !-->
-<!-- HTML !-->
+
+	
+			<footer>
+				<div class="littleTree" id="littleTree"><object data="../images/littleTreeWeb.svg" type="image/svg+xml" id="logo"></object></div>
+		
+		<p>This site is authored by Trevor Flynn. 09/06/2021
+				</p></footer>
+		</div>
 <script src="quizGameFunctions.js"></script>
 </body>
 </html>

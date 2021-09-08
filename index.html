@@ -45,11 +45,12 @@ Working on functions for a quiz game.
 
   <button id = "lifeline" class="lifelines" type ="button" onclick ="help()"><p>50:50</p></button>
 	
-  <button id = "lifeline2" class="lifelines" type ="button" onclick ="help2()"><p>Ask</p></button>
+  <button id = "lifeline2" class="lifelines" type ="button" onclick ="on()"><p>Phone</p></button>
   
-  <button id = "lifeline3" class="lifelines" type ="button" onclick ="help3()"><p>Phone</p></button>
+  <button id = "lifeline3" class="lifelines" type ="button" onclick ="help3()"><p>Ask</p></button>
 
 </div>
+			<div id="overlay" onclick="off()"><object data="sid.svg" type="image/svg+xml" id="sid" class="sid"></object><p id="phone">I believe the answer is B.</p></div>
 			
 			
 			
@@ -96,16 +97,17 @@ Working on functions for a quiz game.
 
 			</div>
 
-	<div id="audio" style="display:block;">
-		<audio controls>
-  <source src="Prince Ali.mp3" type="audio/mpeg">
+	<!--<div style="display:none;">
+		<audio id="audio" >
+			<source src="Prince Ali.mp3" type="audio/mpeg">
 </audio>
-	</div>
+	</div>-->
 			<footer>
-				<div class="littleTree" id="littleTree"><object data="littleTreeWeb.svg" type="image/svg+xml" id="logo"></object></div>
-		
-		<p>This site is authored by Trevor Flynn. 09/06/2021
-				</p></footer>
+				
+					 <!---type="button" value="PLAY" onclick="play()"-->
+				<div class="littleTree" id="littleTree" ><object data="littleTreeWeb.svg" type="image/svg+xml" id="logo"></object><p>This site is authored by Trevor Flynn. 2021
+				</p></div>
+		</footer>
 <script src="quizGameFunctions.js"></script>
 </body>
 </html>

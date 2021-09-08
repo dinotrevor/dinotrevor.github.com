@@ -230,7 +230,12 @@ for(var i = 0; i < wans.length; i++)
   wans[i].style.display='inline-block';
 }
 ///////////////////////////////////////////////////////////////////////////////////////
+function help2(){
 
+ }
+function help3(){
+
+ }
 
 
 
@@ -253,13 +258,26 @@ function scoreRender(){
 		document.getElementById("bronze").style.display = "block";
 	}
 	else {
-		document.getElementById("runnerUp").style.display ="block";
+		document.getElementById("scoreBoard").style.float ="center";
 	}
 			
 	}
 
 
-			
+			function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+	document.getElementById("lifeline2").style.display ="none";
+}
+
 
 
 		

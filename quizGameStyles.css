@@ -412,6 +412,18 @@ margin-left:auto;
 			text-align:center;
 	justify-content:center;
 align-items:center;
+	
+}
+object {
+	pointer-events: none;
+	
+}
+.click{
+  background: red;
+  overflow: hidden;
+	width:14%;
+	float:left;
+	
 }
 
 #littleTree {
@@ -420,6 +432,7 @@ align-items:center;
 align-items:center;
 width:100%;
 	opacity:0.8;
+	
 
 }
 
@@ -456,11 +469,7 @@ width:33%;
 
 }
 
-#audio{
-	
-	margin-top:25px;
-	
-}
+
 
 #overlay {
   display: none;
@@ -486,6 +495,13 @@ width:33%;
 }
 
 #phone {
+	font-size:20px;
+	color:white;
+	text-shadow: 2px 2px 2px black;
+	
+	
+}
+#ask {
 	font-size:20px;
 	color:white;
 	text-shadow: 2px 2px 2px black;

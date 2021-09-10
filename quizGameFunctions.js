@@ -10,6 +10,7 @@ const scoreDiv = document.getElementById("score");
 
 
 
+
 		const questions =
 		[
 		{
@@ -250,24 +251,34 @@ function scoreRender(){
 	document.getElementById("choices").style.display = "none";
 	if (score == 10){
 		 document.getElementById("gold").style.display = "block";
+	
 	}
 	else if (score >= 8){
 			document.getElementById("silver").style.display = "block";
+		
 	}
 	else if (score >= 6) {
 		document.getElementById("bronze").style.display = "block";
+		
 	}
 	else {
 		document.getElementById("scoreBoard").style.float ="center";
+		
 	}
-			
+			audio2();
 	}
 
 
-			function play() {
+			function audio() {
         var audio = document.getElementById("audio");
         audio.play();
       }
+
+function audio2()
+{
+	var audio = document.getElementById("audio");
+	audio.pause();
+}
 
 function on() {
   document.getElementById("overlay").style.display = "block";
@@ -281,7 +292,7 @@ function on2() {
   document.getElementById("overlay2").style.display = "block";
 }
 
-function off3() {
+function off2() {
   document.getElementById("overlay2").style.display = "none";
 	document.getElementById("lifeline3").style.display ="none";
 }

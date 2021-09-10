@@ -456,11 +456,6 @@ width:33%;
 
 }
 
-#audio{
-	
-	margin-top:25px;
-	
-}
 
 #overlay {
   display: none;
@@ -514,4 +509,10 @@ width:33%;
 
 
 
-
+.click{
+  background: red;
+  overflow: hidden;
+	width:14%;
+	float:left;
+	
+}

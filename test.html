@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<!----------------
+-Name:Trevor Flynn
+-Date:01/25/22
+-Class:CIS166AE
+----------------->
+<title>PHP Contents</title>
+<meta charset = "utf8">
+<meta name = "viewport" content = "width = device-width, initial-scale = 1" />
+<meta name = "author" content = "Trevor Flynn"/>
+<meta name = "KeyWords" content = "PHP, MySQL" />
+<meta name = "Description" content = "This is my HTML page for the class."/>
+		<style>
+		
+			/*
+			Grayish #5D6E73
+			Light grayish #BABCBC
+			Green #373F21
+			Super Light Green #C2CAAC
+			Kahki #8E8B5B
+			Light Kahki #B2AF7F
+			Rust #5B240E
+			Dark Brown #25150F
+			*/
+			body{
+				background-color:white
+				font-family:calibri, sans-serif;
+				margin:0px;
+				
+			}
+			header{
+				background-image:url(portree-skye_cropped.jpg);
+				height:100px;
+				background-position: 0px -27px;	
+			}
+			h1, h3 {
+				font-family:arial black, arial, sans-serif;
+			}
+			header h1{
+				color:white;
+				padding-top:30px;
+				padding-left:10px;
+				text-shadow:0px 0px 3px black, 4px 4px 5px black;
+			}
+			nav ul{
+				list-style-type:none;
+				margin:0px;
+				padding:0px;
+			}
+			nav ul li{
+				display:block;
+				border-bottom:1px solid;
+				background-color:#8E8B5B;
+			}
+			nav ul li a {
+				display:block;
+				text-align:center;
+				padding:15px 0px;
+				font-family:arial, sans-serif;
+				font-weight:bold;
+				color:white;
+				text-decoration:none;
+				text-shadow: 0px 0px 1px black;
+			}
+			nav ul li a:visited {
+				color:white;
+				}
+			nav ul li a:hover {
+				background-color:#5B240E;
+				}
+	
+				main{
+					padding:10px;
+					
+				}
+				img{
+					width:100%;
+					border: 1px solid;
+					border-radius:15px;
+				}
+				footer {
+					background-color:#BABCBC;
+					padding:10px;
+					text-align:center;
+					font-size:small;
+				}
+@media screen and (min-width:600px) {
+	header {
+		height:173px;
+		background-position:0px 0px;
+	}
+	header h1 {
+		font-size:56px;
+		padding-left:45px;
+		padding-top:60px;
+	}
+	nav {
+		display:block;
+		border-bottom:1px solid;
+		background-color:#8E8B5B;
+		padding:0px;
+	}
+	nav ul {
+		width:100%;
+		display:flex;
+		flex-wrap:none;
+	}
+	nav ul li {all:unset;}
+	nav ul li {
+		width:100%;
+		margin:0px 10px;
+		text-align:center;
+		padding:0px;
+	}
+	img{
+		max-width:40%;
+		float:left;
+		margin-right:10px;
+	}
+	article {clear:left;}
+	article img {
+		float:right;
+		margin-right:0px;
+		margin-left:10px;
+		max-width:50%;
+		}	
+}
+
+@media screen and (min-width:800px) {
+body {
+	background-color:#C2CAAC;
+	}
+	#wrapper {
+	width:85%;
+	max-width:1024px;
+	margin:auto;
+	background-color:white;
+	box-shadow:3px 3px 10px #373F21, -3px 0px #373F21;
+	padding:0px;
+	background-image:url(navbg.png);
+	background-repeat:repeat-y;
+	}
+	nav {all:unset;}
+	nav {background-color:#B2AF7F;}
+	
+	nav {
+		width:150px;
+		float:left;
+		margin:0px;
+		padding:0px;
+		}
+	nav ul {
+		display:block;
+		}
+	nav ul li {
+		display:block;
+		margin:0px;
+		border-bottom:1px solid;
+	}
+	main {margin-left:150px;}
+	img{
+		width:280px;
+		min-width:250px;
+	}
+	article img {
+		width:45%;
+		max-width:50%;
+		}
+}		
+</style>
+</head>
+<body>
+<div id="wrapper">
+			<header>
+				<h1>PHP Projects</h1>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="/week1/index.php">Week 1</a></li>
+					<li><a href="/week2/index.php">Week 2</a></li>
+					<li><a href="/week3/index.php">Week 3</a></li>
+					<li><a href="/week4/index.php">Week 4</a></li>
+					<li><a href="/week5/index.php">Week 5</a></li>
+				</ul>
+			</nav>
+			<main>
+				<article>
+
+				</article>
+			</main>
+			<footer>		
+				<p>"This site is authored and maintained by "Trevor Flynn." It is not an official website of the Maricopa County Community College District, and Maricopa is not responsible for the content of this site."</p>
+
+			</footer>
+		</div>
+</body>
+</html>
